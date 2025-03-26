@@ -4,7 +4,6 @@ export default {
       input: {
         main: 'index.html',
         color: 'color.html',
-        sample: 'sample.html'
       }
     }
   },
