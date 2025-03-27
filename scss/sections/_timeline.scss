@@ -38,7 +38,7 @@
     
     @include respond-to(lg) {
       margin: 4rem auto 0;
-      padding: 0 2rem;
+      padding: 1rem 2rem;
     }
   }
   
@@ -119,6 +119,7 @@
   .timeline-item .timeline-date {
     @include respond-to(lg) {
       right: calc(50% + 3rem);
+      text-align: right;
     }
   }
   
@@ -126,6 +127,7 @@
     @include respond-to(lg) {
       left: calc(50% + 3rem);
       right: auto;
+      text-align: left;
     }
   }
   
