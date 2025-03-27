@@ -1,0 +1,108 @@
+@use '../base/variables' as *;
+@use '../utils/mixins' as *;
+@use '../animations/keyframes';
+@use 'sass:math';
+
+.bottom-notice {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--primary-500), var(--accent1-500));
+  padding: 6rem 0 12rem;
+  
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 360px;
+    background-repeat: repeat-x;
+    animation: wave 20s linear infinite;
+  }
+
+  &::before {
+    bottom: -120px;
+    background-image: url("data:image/svg+xml,%3Csvg width='1200' height='360' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,180 C300,330 600,30 1200,180 L1200,360 L0,360 Z' fill='%23ffffff' fill-opacity='0.2'/%3E%3C/svg%3E");
+    opacity: 0.8;
+  }
+
+  &::after {
+    bottom: -180px;
+    background-image: url("data:image/svg+xml,%3Csvg width='1200' height='360' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,180 C600,360 900,0 1200,180 L1200,360 L0,360 Z' fill='%23ffffff' fill-opacity='0.15'/%3E%3C/svg%3E");
+    animation-delay: -10s;
+    opacity: 0.6;
+  }
+  
+  @include respond-to(md) {
+    padding: 8rem 0 8rem;
+  }
+  
+  &__content {
+    @include flex(column, center, center);
+    color: var(--text-white);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  &__title {
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+
+    @include respond-to(md) {
+      font-size: 3rem;
+    }
+  }
+  
+  &__description {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-white-90);
+  }
+  
+  &__action {
+    @include flex(row, center, center);
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background-color: var(--bg-white);
+    color: var(--primary-500);
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      transition: transform var(--transition-speed) ease;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+}
+
+@keyframes wave {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 1200px;
+  }
+} 

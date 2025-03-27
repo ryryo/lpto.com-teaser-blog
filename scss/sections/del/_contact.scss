@@ -1,11 +1,12 @@
 @use '../utils/mixins' as *;
-@use '../animations/keyframes';
 @use 'sass:math';
 
 .contact {
-  position: relative;
-  overflow: hidden;
-  
+  padding: 6rem 0;
+  background-color: var(--bg-dark);
+  color: var(--text-white);
+  text-align: center;
+
   &__wave {
     position: absolute;
     top: 0;
@@ -22,9 +23,9 @@
   }
   
   &__content {
+    @include flex(column, center, center);
     background: linear-gradient(135deg, var(--primary-500), var(--accent1-500));
     padding: 4rem 0 3rem;
-    text-align: center;
     color: var(--text-white);
     
     @include respond-to(md) {
@@ -33,38 +34,31 @@
   }
   
   &__title {
-    margin-bottom: 1.25rem;
-    
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+
     @include respond-to(md) {
-      margin-bottom: 1.5rem;
-    }
-    
-    h2 {
-      margin-bottom: 0.75rem;
-      
-      @include respond-to(md) {
-        margin-bottom: 1rem;
-      }
-    }
-    
-    p {
-      max-width: 600px;
-      margin: 0 auto;
-      opacity: 0.9;
-      padding: 0 1rem;
+      font-size: 3rem;
     }
   }
   
+  &__description {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-white-90);
+  }
+  
   &__buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(column, center, center);
     gap: 1rem;
     margin-top: 1.5rem;
     
     @include respond-to(sm) {
       flex-direction: row;
-      justify-content: center;
       margin-top: 2rem;
     }
     
@@ -84,7 +78,7 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--white-10);
     animation: float 6s ease-in-out infinite;
     
     @include respond-to(md) {
@@ -123,5 +117,38 @@
         }
       }
     }
+  }
+
+  &__cta {
+    @include flex(row, center, center);
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--accent-500);
+    color: var(--text-white);
+    font-weight: 600;
+    border-radius: 2rem;
+    text-decoration: none;
+    transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      transition: transform var(--transition-speed) ease;
+    }
+
+    &:hover {
+      background-color: var(--accent-600);
+      transform: translateY(-2px);
+
+      svg {
+        transform: translateX(4px);
+      }
+    }
+  }
+
+  &__note {
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: var(--text-white-70);
   }
 }

@@ -57,6 +57,11 @@ $bg-white: #FFFFFF;
 $bg-light: #F4F9F7;
 $bg-dark: #1A1A1A;
 
+// Border colors
+$border-default: #E5E7EB;
+$border-hover: #D1D5DB;
+$border-focus: $primary-500;
+
 // Breakpoints
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
@@ -136,6 +141,7 @@ $transition-speed: 0.3s;
   --text-light: #{$text-light};
   --text-primary: #{$text-dark};
   --text-secondary: #{$primary-900};
+  --text-tertiary: #{$text-light};
 
   // Background colors
   --bg-primary: #{$bg-white};
@@ -143,6 +149,11 @@ $transition-speed: 0.3s;
   --bg-white: #{$bg-white};
   --bg-light: #{$bg-light};
   --bg-dark: #{$primary-900};
+
+  // Border colors
+  --border-color: #{$border-default};
+  --border-hover: #{$border-hover};
+  --border-focus: #{$border-focus};
 
   // State colors
   --state-danger: #DC3545;
