@@ -1,0 +1,268 @@
+@use '../utils/mixins' as *;
+@use '../animations/keyframes';
+
+/* 開発者の思いセクション */
+.developer {
+  padding: 3rem 0;
+  background-color: var(--primary-50);
+  position: relative;
+  overflow: hidden;
+  
+  @include respond-to(md) {
+    padding: 4.5rem 0;
+  }
+  
+  @include respond-to(lg) {
+    padding: 6rem 0;
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.05;
+    z-index: 0;
+  }
+  
+  .developer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    position: relative;
+    z-index: 1;
+    
+    @include respond-to(md) {
+      gap: 2rem;
+    }
+    
+    @include respond-to(lg) {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+  }
+  
+  .developer-profile {
+    flex: 1;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    
+    @include respond-to(lg) {
+      margin-bottom: 0;
+    }
+  }
+  
+  .developer-image-container {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-lg);
+    border: 5px solid var(--bg-primary);
+    
+    @include respond-to(md) {
+      width: 180px;
+      height: 180px;
+      margin-bottom: 1.25rem;
+    }
+    
+    @include respond-to(lg) {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 1.5rem;
+    }
+  }
+  
+  .developer-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .developer-info {
+    text-align: center;
+    
+    h3 {
+      font-size: 1.5rem;
+      color: var(--primary-600);
+      margin-bottom: 0.5rem;
+      
+      @include respond-to(md) {
+        font-size: 1.6rem;
+      }
+      
+      @include respond-to(lg) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+  
+  .developer-title {
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    
+    @include respond-to(md) {
+      font-size: 1.05rem;
+    }
+    
+    @include respond-to(lg) {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .developer-social a {
+    color: var(--primary-500);
+    transition: color var(--transition-speed) ease;
+    
+    &:hover {
+      color: var(--primary-600);
+    }
+  }
+  
+  .developer-thoughts {
+    flex: 2;
+  }
+  
+  .thought-block {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-md);
+    
+    @include respond-to(lg) {
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      color: var(--primary-600);
+      margin-bottom: 0.75rem;
+      
+      @include respond-to(md) {
+        font-size: 1.4rem;
+      }
+      
+      @include respond-to(lg) {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+      line-height: 1.7;
+      font-size: 0.95rem;
+      
+      @include respond-to(md) {
+        font-size: 1rem;
+      }
+      
+      @include respond-to(lg) {
+        margin-bottom: 1rem;
+        line-height: 1.8;
+      }
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .geometric-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .shape {
+    position: absolute;
+    opacity: 0.15;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  .shape-1 {
+    top: 10%;
+    left: 10%;
+    width: 120px;
+    height: 120px;
+    background: var(--accent1-400);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation-name: float-rotate-1;
+    
+    @include respond-to(lg) {
+      width: 200px;
+      height: 200px;
+    }
+  }
+  
+  .shape-2 {
+    top: 70%;
+    left: 20%;
+    width: 100px;
+    height: 100px;
+    background: var(--primary-400);
+    border-radius: 50%;
+    animation-name: float-rotate-2;
+    
+    @include respond-to(lg) {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  .shape-3 {
+    top: 30%;
+    right: 15%;
+    width: 80px;
+    height: 80px;
+    background: var(--accent2-400);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation-name: float-rotate-3;
+    
+    @include respond-to(lg) {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
+  .shape-4 {
+    bottom: 20%;
+    right: 10%;
+    width: 120px;
+    height: 120px;
+    background: var(--secondary-400);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+    animation-name: float-rotate-4;
+    
+    @include respond-to(lg) {
+      width: 180px;
+      height: 180px;
+    }
+  }
+} 

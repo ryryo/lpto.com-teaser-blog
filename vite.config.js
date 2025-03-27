@@ -7,5 +7,11 @@ export default {
       }
     }
   },
-  publicDir: 'public'
+  publicDir: 'public',
+  css: {
+    devSourcemap: true
+  },
+  optimizeDeps: {
+    include: ['sass']
+  }
 } 

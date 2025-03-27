@@ -1,0 +1,152 @@
+@use '../utils/mixins' as *;
+
+// サービス紹介セクション
+.video-section {
+  position: relative;
+  overflow: hidden;
+  color: var(--text-white);
+  padding: 80px 0;
+  
+  @include respond-to(sm) {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    color: var(--text-white);
+    position: relative;
+    z-index: 10;
+
+    &::after {
+      background-color: var(--text-white);
+    }
+  }
+
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translateX(-50%) translateY(-50%);
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(30, 19, 71, 0.85);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+      background-size: 4px 4px;
+      z-index: 5;
+    }
+  }
+
+  .services-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .services-lead {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+    color: var(--accent1-200);
+    
+    @include respond-to(md) {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+  }
+
+  .services-content p {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.6;
+    text-align: left;
+    
+    @include respond-to(md) {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+  }
+
+  .features-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    
+    @include respond-to(md) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+    transition: all var(--transition-speed) ease;
+    width: 100%;
+    max-width: 300px;
+    
+    @include respond-to(md) {
+      width: auto;
+      max-width: none;
+      padding: 1rem 2rem;
+    }
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+      
+      @include respond-to(md) {
+        font-size: 1rem;
+        margin-right: 0.75rem;
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin: 0 0 2px;
+      
+      @include respond-to(md) {
+        font-size: 1.1rem;
+        margin: 0 0 3px;
+      }
+    }
+  }
+}

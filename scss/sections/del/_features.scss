@@ -1,0 +1,75 @@
+@use '../utils/mixins' as *;
+
+// 特徴セクション
+.features {
+  &__content {
+    @include flex(column);
+    gap: 2rem;
+    margin-top: 2rem;
+    
+    @include respond-to(sm) {
+      @include flex(row);
+    }
+  }
+  
+  &__demo {
+    flex: 1;
+    @include flex(row, center, center);
+    position: relative;
+    
+    img {
+      max-width: 100%;
+      max-height: 700px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      background-image: url('../img/cap.jpg');
+      background-size: cover;
+      background-position: center;
+      width: 57%;
+      height: 95%;
+      top: 3%;
+      left: 21.5%;
+      border-radius: 40px;
+      z-index: 1;
+    }
+  }
+  
+  &__list {
+    flex: 1;
+    @include flex(column);
+    gap: 1.5rem;
+  }
+}
+
+// 特徴カード
+.feature-card {
+  background-color: var(--bg-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &__icon {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-100);
+    border-radius: 50%;
+    @include flex(row, center, center);
+    margin-bottom: 1rem;
+    color: var(--primary-500);
+  }
+  
+  h3 {
+    margin-bottom: 0.75rem;
+  }
+} 

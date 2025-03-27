@@ -1,0 +1,109 @@
+@use '../utils/mixins' as *;
+
+// ヘッダー
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  z-index: 100;
+  transition: background-color var(--transition-speed) ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  box-shadow: var(--shadow-sm);
+  
+  &.scrolled {
+    background-color: var(--bg-white);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-500);
+    
+    a {
+      display: flex;
+      align-items: center;
+      
+      img {
+        object-fit: contain;
+      }
+    }
+  }
+  
+  // モバイルファースト: ナビゲーションの基本スタイルはモバイル向け
+  nav {
+    display: none;
+    
+    &.active {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-white);
+      box-shadow: var(--shadow-md);
+      
+      ul {
+        flex-direction: column;
+        padding: 1rem 0;
+        
+        li {
+          margin: 0;
+          
+          a {
+            display: block;
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+    
+    @include respond-to(md) {
+      display: block;
+      
+      &.active {
+        position: static;
+        box-shadow: none;
+      }
+      
+      ul {
+        display: flex;
+        list-style: none;
+        flex-direction: row;
+        padding: 0;
+        
+        li {
+          margin-left: 2rem;
+          
+          a {
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 0;
+            
+            &:hover {
+              color: var(--primary-500);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // モバイルメニュートグル
+  .mobile-menu {
+    display: block;
+    
+    @include respond-to(md) {
+      display: none;
+    }
+  }
+} 

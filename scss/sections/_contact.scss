@@ -1,0 +1,127 @@
+@use '../utils/mixins' as *;
+@use '../animations/keyframes';
+@use 'sass:math';
+
+.contact {
+  position: relative;
+  overflow: hidden;
+  
+  &__wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18.17 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z' opacity='.25' fill='%23FFFFFF'/%3E%3Cpath d='M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z' opacity='.5' fill='%23FFFFFF'/%3E%3Cpath d='M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z' fill='%23FFFFFF'/%3E%3C/svg%3E");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    @include respond-to(md) {
+      height: 100px;
+    }
+  }
+  
+  &__content {
+    background: linear-gradient(135deg, var(--primary-500), var(--accent1-500));
+    padding: 4rem 0 3rem;
+    text-align: center;
+    color: var(--text-white);
+    
+    @include respond-to(md) {
+      padding: 6rem 0 4rem;
+    }
+  }
+  
+  &__title {
+    margin-bottom: 1.25rem;
+    
+    @include respond-to(md) {
+      margin-bottom: 1.5rem;
+    }
+    
+    h2 {
+      margin-bottom: 0.75rem;
+      
+      @include respond-to(md) {
+        margin-bottom: 1rem;
+      }
+    }
+    
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: 0.9;
+      padding: 0 1rem;
+    }
+  }
+  
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    
+    @include respond-to(sm) {
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 300px;
+      
+      @include respond-to(sm) {
+        min-width: 200px;
+        width: auto;
+      }
+    }
+  }
+  
+  &__decoration {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: float 6s ease-in-out infinite;
+    
+    @include respond-to(md) {
+      width: 20px;
+      height: 20px;
+    }
+    
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        $size: math.random(20) + 10px;
+        width: $size;
+        height: $size;
+        animation-delay: #{$i}s;
+        
+        @if $i == 1 {
+          top: 20%;
+          left: 10%;
+        } @else if $i == 2 {
+          top: 30%;
+          right: 15%;
+        } @else if $i == 3 {
+          bottom: 30%;
+          left: 20%;
+        } @else if $i == 4 {
+          bottom: 20%;
+          right: 10%;
+        } @else {
+          top: 50%;
+          left: 50%;
+        }
+        
+        @include respond-to(md) {
+          $size: math.random(30) + 10px;
+          width: $size;
+          height: $size;
+        }
+      }
+    }
+  }
+}

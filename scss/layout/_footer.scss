@@ -1,0 +1,219 @@
+@use '../utils/mixins' as *;
+
+.site-footer {
+  background: linear-gradient(to right, var(--primary-900), var(--primary-800));
+  color: var(--text-white);
+  padding: 3rem 0 2rem;
+  position: relative;
+  overflow: hidden;
+  
+  // 背景の装飾
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 80px 80px, 60px 60px;
+    opacity: 0.6;
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+    padding: 0 1.25rem;
+    
+    // フッターカラム（上部）
+    &:first-of-type {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 2rem;
+      
+      @include respond-to(sm) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      
+      @include respond-to(md) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+      }
+      
+      @include respond-to(lg) {
+        gap: 4rem;
+      }
+    }
+  }
+  
+  // フッター列
+  .footer-col {
+    h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1rem;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 3px;
+        background: var(--primary-400);
+        border-radius: 10px;
+      }
+      
+      @include respond-to(md) {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    ul {
+      padding-left: 0.5rem;
+      
+      li {
+        margin-bottom: 0.75rem;
+        
+        @include respond-to(md) {
+          margin-bottom: 1rem;
+        }
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+        
+        a {
+          color: rgba(255, 255, 255, 0.7);
+          font-size: 0.9rem;
+          transition: all var(--transition-speed) ease;
+          display: inline-block;
+          position: relative;
+          padding-left: 1rem;
+          
+          &::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: all var(--transition-speed) ease;
+          }
+          
+          &:hover {
+            color: var(--primary-200);
+            padding-left: 1.25rem;
+            transform: translateX(5px);
+            
+            &::before {
+              opacity: 1;
+            }
+          }
+          
+          @include respond-to(md) {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  
+  // 下部フッター
+  .bottom-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    
+    @include respond-to(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  // コピーライト
+  .copyright {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    text-align: center;
+    
+    @include respond-to(md) {
+      text-align: left;
+    }
+  }
+  
+  // ソーシャルアイコン
+  .social-icons {
+    display: flex;
+    gap: 1rem;
+    
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-white);
+      transition: all var(--transition-speed) ease;
+      position: relative;
+      overflow: hidden;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, var(--primary-500), var(--accent1-500));
+        opacity: 0;
+        transition: opacity var(--transition-speed) ease;
+        z-index: -1;
+      }
+      
+      svg {
+        width: 18px;
+        height: 18px;
+        transition: transform var(--transition-speed) ease;
+      }
+      
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        
+        &::before {
+          opacity: 1;
+        }
+        
+        svg {
+          transform: scale(1.2);
+        }
+      }
+      
+      @include respond-to(md) {
+        width: 44px;
+        height: 44px;
+        
+        svg {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+} 

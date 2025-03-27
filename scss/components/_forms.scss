@@ -1,0 +1,67 @@
+@use '../utils/mixins' as *;
+
+// コンタクトフォーム
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: var(--bg-white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  @include shadow(lg);
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+      font-weight: 500;
+      
+      .required {
+        color: var(--state-danger);
+      }
+    }
+    
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 1rem;
+      
+      &:focus {
+        outline: none;
+        border-color: var(--primary-500);
+        box-shadow: 0 0 0 2px var(--primary-100);
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+    }
+    
+    &--checkbox {
+      display: flex;
+      align-items: center;
+      
+      input {
+        width: auto;
+        margin-right: 0.5rem;
+      }
+      
+      label {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.125rem;
+  }
+} 

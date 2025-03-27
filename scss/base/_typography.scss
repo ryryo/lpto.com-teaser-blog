@@ -1,0 +1,113 @@
+@use '../utils/mixins' as *;
+
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  @include font-size(2rem);
+  
+  @include respond-to(md) {
+    @include font-size(2.5rem);
+  }
+}
+
+h2 {
+  @include font-size(1.75rem);
+  
+  @include respond-to(md) {
+    @include font-size(2rem);
+  }
+}
+
+h3 {
+  @include font-size(1.5rem);
+  
+  @include respond-to(md) {
+    @include font-size(1.75rem);
+  }
+}
+
+h4 {
+  @include font-size(1.25rem);
+  
+  @include respond-to(md) {
+    @include font-size(1.5rem);
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+  @include font-size(1rem);
+}
+
+a {
+  color: var(--primary-600);
+  text-decoration: none;
+  @include transition(color);
+  
+  @include hover {
+    color: var(--primary-700);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-primary {
+  color: var(--primary-600);
+}
+
+.text-secondary {
+  color: var(--secondary-600);
+}
+
+.text-white {
+  color: var(--text-white);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.text-sm {
+  @include font-size(0.875rem);
+}
+
+.text-lg {
+  @include font-size(1.125rem);
+}
+
+.text-xl {
+  @include font-size(1.25rem);
+}
+
+.text-2xl {
+  @include font-size(1.5rem);
+} 

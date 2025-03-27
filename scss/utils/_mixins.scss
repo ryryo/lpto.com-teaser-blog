@@ -1,0 +1,140 @@
+@use '../base/variables' as *;
+
+// Flexbox mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Grid mixins
+@mixin grid($columns: 1, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin grid-auto-fit($min-width: 250px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+@mixin grid-auto-fill($min-width: 250px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// Media queries
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Typography
+@mixin font-size($size, $line-height: 1.5) {
+  font-size: $size;
+  line-height: $line-height;
+}
+
+// Transitions
+@mixin transition($property: all, $duration: $transition-speed, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}
+
+// Hover effects
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+// Shadows
+@mixin shadow($level: md) {
+  @if $level == sm {
+    box-shadow: $shadow-sm;
+  } @else if $level == md {
+    box-shadow: $shadow-md;
+  } @else if $level == lg {
+    box-shadow: $shadow-lg;
+  }
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Buttons
+@mixin button-base {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: $radius-md;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  border: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+// Gradients
+@mixin gradient($direction: to right, $start-color: var(--primary-500), $end-color: var(--secondary-500)) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width: 16, $height: 9) {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// Section header
+@mixin section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  
+  @include respond-to(md) {
+    margin-bottom: 2rem;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--text-medium);
+  }
+} 

@@ -1,0 +1,111 @@
+@use '../utils/mixins' as *;
+@use '../animations/keyframes';
+
+.performance-graphs {
+  padding: 40px 0;
+  
+  @include respond-to(md) {
+    padding: 60px 0;
+  }
+
+  .section-description {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-medium);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include respond-to(md) {
+      margin-bottom: 40px;
+    }
+  }
+  
+  .graph-tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    
+    @include respond-to(sm) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    
+    .tab-btn {
+      background: none;
+      border: 2px solid var(--primary-500);
+      color: var(--primary-500);
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition-speed) ease;
+      width: 100%;
+      max-width: 200px;
+      font-size: 0.9rem;
+      
+      @include respond-to(md) {
+        width: auto;
+        padding: 10px 24px;
+        font-size: 1rem;
+      }
+      
+      &.active, &:hover {
+        background-color: var(--primary-500);
+        color: white;
+      }
+    }
+  }
+  
+  .graphs-container {
+    position: relative;
+    height: 300px;
+    max-width: 900px;
+    margin: 0 auto;
+    
+    @include respond-to(md) {
+      height: 350px;
+    }
+    
+    @include respond-to(lg) {
+      height: 400px;
+    }
+  }
+  
+  .graph-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-speed) ease, visibility var(--transition-speed) ease;
+    
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
+  // アニメーション効果
+  &.animated {
+    .graph-item.active {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+    
+    @include respond-to(md) {
+      font-size: 2rem;
+    }
+  }
+}
+
+// アニメーションキーフレームは削除します - animations/keyframesから読み込みます 

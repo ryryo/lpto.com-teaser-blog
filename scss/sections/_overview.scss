@@ -1,0 +1,205 @@
+@use '../utils/mixins' as *;
+
+// サービス概要セクション
+.overview {
+  background-color: var(--bg-light);
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 4rem;
+  
+  @include respond-to(md) {
+    padding-bottom: 6rem;
+  }
+
+  &__content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 0 1rem;
+  }
+
+  &__text {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(5px);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+    
+    @include respond-to(md) {
+      padding: 2rem;
+      border-radius: var(--radius-lg);
+      margin-bottom: 2rem;
+    }
+    
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      
+      @include respond-to(sm) {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .feature-list {
+    margin-top: 1rem;
+    padding-left: 1.25rem;
+    
+    @include respond-to(md) {
+      margin-top: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+      position: relative;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        left: -1.25rem;
+        top: 0.4rem;
+        width: 6px;
+        height: 6px;
+        background-color: var(--primary-500);
+        border-radius: 50%;
+        
+        @include respond-to(md) {
+          left: -1.5rem;
+          top: 0.5rem;
+          width: 8px;
+          height: 8px;
+        }
+      }
+    }
+  }
+
+  .geometric-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .shape {
+    position: absolute;
+    opacity: 0.5;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    
+    &-1 {
+      width: 60px;
+      height: 60px;
+      background-color: var(--primary-300);
+      border-radius: 50%;
+      top: 20%;
+      left: 10%;
+      animation-name: float1;
+      
+      @include respond-to(md) {
+        width: 80px;
+        height: 80px;
+      }
+    }
+    
+    &-2 {
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--accent1-400);
+      border-radius: 6px;
+      top: 70%;
+      left: 20%;
+      transform: rotate(45deg);
+      animation-name: float2;
+      
+      @include respond-to(md) {
+        width: 60px;
+        height: 60px;
+        border-width: 3px;
+        border-radius: 8px;
+      }
+    }
+    
+    &-3 {
+      width: 0;
+      height: 0;
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 35px solid var(--primary-500);
+      top: 30%;
+      right: 15%;
+      animation-name: float3;
+      
+      @include respond-to(md) {
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 52px solid var(--primary-500);
+      }
+    }
+    
+    &-4 {
+      width: 30px;
+      height: 30px;
+      background-color: var(--accent1-300);
+      top: 75%;
+      right: 20%;
+      animation-name: float4;
+      
+      @include respond-to(md) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    
+    &-5 {
+      width: 20px;
+      height: 20px;
+      background-color: var(--accent2-400);
+      border-radius: 50%;
+      top: 40%;
+      left: 30%;
+      animation-name: float5;
+      
+      @include respond-to(md) {
+        width: 25px;
+        height: 25px;
+      }
+    }
+    
+    &-6 {
+      width: 40px;
+      height: 40px;
+      border: 2px dashed var(--primary-400);
+      border-radius: 50%;
+      bottom: 15%;
+      right: 30%;
+      animation-name: float6;
+      
+      @include respond-to(md) {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    
+    &-7 {
+      width: 25px;
+      height: 25px;
+      background-color: var(--accent2-300);
+      transform: rotate(45deg);
+      top: 15%;
+      left: 60%;
+      animation-name: float7;
+      
+      @include respond-to(md) {
+        width: 35px;
+        height: 35px;
+      }
+    }
+  }
+} 

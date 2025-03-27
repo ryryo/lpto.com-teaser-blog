@@ -1,0 +1,106 @@
+@use '../utils/mixins' as *;
+
+.service-cards {
+  background-color: var(--bg-light);
+  padding: 80px 0;
+  
+  @include respond-to(sm) {
+    padding: 60px 0;
+  }
+  
+  &__intro {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+    padding: 0 1rem;
+    
+    @include respond-to(md) {
+      margin-bottom: 3rem;
+    }
+    
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-medium);
+      
+      @include respond-to(md) {
+        font-size: 1.1rem;
+        line-height: 1.8;
+      }
+    }
+  }
+  
+  &__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    
+    @include respond-to(sm) {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+  }
+}
+
+// 運用カード
+.operation-card {
+  background-color: var(--bg-white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  
+  @include respond-to(md) {
+    padding: 2rem;
+  }
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  &__icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(2, 165, 80, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 1.25rem;
+    
+    @include respond-to(md) {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+    }
+    
+    svg {
+      width: 25px;
+      height: 25px;
+      color: var(--primary-500);
+      
+      @include respond-to(md) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  
+  h3 {
+    margin-bottom: 0.75rem;
+    
+    @include respond-to(md) {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  p {
+    color: var(--text-medium);
+    font-size: 0.95rem;
+    
+    @include respond-to(md) {
+      font-size: 1rem;
+    }
+  }
+} 

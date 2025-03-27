@@ -1,0 +1,104 @@
+@use '../utils/mixins' as *;
+
+.container {
+  @include container;
+}
+
+.grid {
+  @include grid(12, 1rem);
+  
+  @include respond-to(md) {
+    @include grid(6, 1rem);
+  }
+  
+  @include respond-to(sm) {
+    @include grid(4, 1rem);
+  }
+  
+  &-auto-fit {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  &-auto-fill {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.flex {
+  @include flex;
+  
+  &-col {
+    @include flex(column);
+  }
+  
+  &-center {
+    @include flex(row, center, center);
+  }
+  
+  &-between {
+    @include flex(row, space-between, center);
+  }
+  
+  &-around {
+    @include flex(row, space-around, center);
+  }
+  
+  &-wrap {
+    @include flex(row, flex-start, stretch, wrap);
+  }
+}
+
+// Gap utilities
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.gap-4 {
+  gap: 1.5rem;
+}
+
+.gap-5 {
+  gap: 2rem;
+}
+
+// Spacing utilities
+.m-auto {
+  margin: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+// Grid columns
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+    
+    @include respond-to(md) {
+      grid-column: span min($i, 6);
+    }
+    
+    @include respond-to(sm) {
+      grid-column: span min($i, 4);
+    }
+  }
+} 

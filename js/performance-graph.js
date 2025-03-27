@@ -232,25 +232,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // タブ切り替え機能
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const graphItems = document.querySelectorAll('.graph-item');
+  // タブ切り替え用の処理
+  const tabBtns = document.querySelectorAll('.tabbed-charts .tab-btn');
+  const graphItems = document.querySelectorAll('.tabbed-charts .graph-item');
 
-  tabButtons.forEach(btn => {
+  // タブボタンのクリックイベント
+  tabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetGraph = btn.getAttribute('data-graph');
-      
-      // アクティブなタブの切り替え
-      tabButtons.forEach(b => b.classList.remove('active'));
+      // アクティブクラスの切り替え
+      tabBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       
-      // 対応するグラフの表示切り替え
+      // グラフの表示切り替え
+      const graphId = btn.getAttribute('data-graph');
       graphItems.forEach(item => {
         item.classList.remove('active');
-        if (item.id === `${targetGraph}-graph`) {
-          item.classList.add('active');
-        }
       });
+      document.getElementById(`${graphId}-graph`).classList.add('active');
     });
   });
 
@@ -281,4 +279,129 @@ document.addEventListener('DOMContentLoaded', () => {
   if (casesSection) {
     graphObserver.observe(casesSection);
   }
-}); 
+});
+
+// グラフ初期化関数
+function initCharts() {
+  // 売上グラフ
+  const salesCtx = document.getElementById('salesChart').getContext('2d');
+  new Chart(salesCtx, {
+    type: 'line',
+    data: {
+      labels: ['2020', '2021', '2022', '2023', '2024(予測)'],
+      datasets: [{
+        label: '年間売上(百万円)',
+        data: [12, 19, 32, 45, 65],
+        borderColor: '#4E31AA',
+        backgroundColor: 'rgba(78, 49, 170, 0.1)',
+        borderWidth: 3,
+        fill: true,
+        tension: 0.3
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+        },
+        tooltip: {
+          mode: 'index',
+          intersect: false,
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: 'rgba(0, 0, 0, 0.05)'
+          }
+        },
+        x: {
+          grid: {
+            display: false
+          }
+        }
+      }
+    }
+  });
+
+  // カテゴリ分析グラフ
+  const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+  new Chart(categoryCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['ネイルサロン', 'アイラッシュサロン', '美容室', 'エステサロン', 'その他'],
+      datasets: [{
+        data: [30, 25, 20, 15, 10],
+        backgroundColor: [
+          '#4E31AA',
+          '#7F5AD8',
+          '#AC83FF',
+          '#D9C6FF',
+          '#EFE9FF'
+        ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'right',
+        }
+      }
+    }
+  });
+
+  // 成長率グラフ
+  const growthCtx = document.getElementById('growthChart').getContext('2d');
+  new Chart(growthCtx, {
+    type: 'bar',
+    data: {
+      labels: ['新規顧客獲得率', 'リピート率', '売上成長率', '利益率'],
+      datasets: [{
+        label: '2022年',
+        data: [20, 30, 15, 25],
+        backgroundColor: 'rgba(127, 90, 216, 0.5)',
+        borderColor: 'rgba(127, 90, 216, 1)',
+        borderWidth: 1
+      }, {
+        label: '2023年',
+        data: [35, 45, 25, 35],
+        backgroundColor: 'rgba(78, 49, 170, 0.5)',
+        borderColor: 'rgba(78, 49, 170, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          grid: {
+            color: 'rgba(0, 0, 0, 0.05)'
+          },
+          ticks: {
+            callback: function(value) {
+              return value + '%';
+            }
+          }
+        },
+        x: {
+          grid: {
+            display: false
+          }
+        }
+      }
+    }
+  });
+} 

@@ -1,3 +1,12 @@
+<!-- 
+-[] めちゃんこからhtmlとcss移植する
+-[] この段階で一度レスポンシブ対応
+-[] 計画書ですべてのパーツを踏襲させる⇒必要な画像素材一覧
+-[] 画像素材を用意する
+-[] デザインの調整
+-[] レスポンシブ対応
+ -->
+
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -21,10 +30,10 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#service">サービス概要</a></li>
-            <li><a href="#features">特徴</a></li>
-            <li><a href="#operation">運用代行</a></li>
-            <li><a href="#cases">実績</a></li>
+            <li><a href="#overview">サービス概要</a></li>
+            <li><a href="#feature-cards">特徴</a></li>
+            <li><a href="#service-cards">運用代行</a></li>
+            <li><a href="#case-studies">実績</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#pricing">料金</a></li>
             <li><a href="#contact">お問い合わせ</a></li>
@@ -54,11 +63,11 @@
       </section>
 
       <!-- サービス概要 -->
-      <section id="service" class="service">
+      <section id="overview" class="overview">
         <div class="container">
           <h2 class="section-title">エルピトとは</h2>
-          <div class="service__content">
-            <div class="service__text">
+          <div class="overview__content">
+            <div class="overview__text">
               <p>「エルピト」は、Landing Page（LP）を最適な状態へと導く道しるべとなるサービスです。その名前には「ぴとっ」と顧客のニーズに寄り添いながら、継続的な改善によってリピート率を高めていくという想いが込められています。</p>
               <p>あなたのLPをスムーズに成功へと導く、そんな頼れる機能を、第一段のスワイプLP機能から始まり、数多く提供していくサービスです。</p>
               <ul class="feature-list">
@@ -81,14 +90,14 @@
       </section>
 
       <!-- サービスの特徴 -->
-      <section id="features" class="features">
+      <section id="feature-cards" class="feature-cards">
         <div class="container">
           <h2 class="section-title">第一弾:スワイプLP機能</h2>
-          <div class="features__content">
-            <div class="features__demo">
+          <div class="feature-cards__content">
+            <div class="feature-cards__demo">
               <img src="img/iphonef.svg" alt="スワイプLP機能のデモ" class="phone-frame">
             </div>
-            <div class="features__list">
+            <div class="feature-cards__list">
               <div class="feature-card">
                 <div class="feature-card__icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg>
@@ -116,13 +125,13 @@
       </section>
 
       <!-- 運用代行 -->
-      <section id="operation" class="operation">
+      <section id="service-cards" class="service-cards">
         <div class="container">
           <h2 class="section-title">運用代行サービス</h2>
-          <div class="operation__intro">
+          <div class="service-cards__intro">
             <p>エルピトは、ただの機能提供に留まりません。LPの制作だけでなく、集客から効果測定、改善までの一連のプロセスを一貫してサポート。お客様のビジネス成長を総合的にバックアップします。データに基づいた戦略的アプローチで、費用対効果の高い集客施策を実現し、持続的な成果を創出します。</p>
           </div>
-          <div class="operation__cards">
+          <div class="service-cards__cards">
             <div class="operation-card">
               <div class="operation-card__icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
@@ -149,7 +158,7 @@
       </section>
 
       <!-- 事例と実績 -->
-      <section id="cases" class="cases">
+      <section id="case-studies" class="case-studies">
         <div class="container">
           <h2 class="section-title">サロン業種別の効果シミュレーション</h2>
           
@@ -202,7 +211,7 @@
       </section>
 
       
-      <section class="performance-graphs">
+      <section class="tabbed-charts">
         <div class="container">
           <h2 class="section-title">実績データ</h2>
           <p class="section-description">過去5年間の成長と実績をグラフで紹介します</p>
@@ -351,6 +360,205 @@
         </div>
       </section>
 
+
+      <section id="video-section" class="video-section">
+        <div class="video-background">
+          <video autoplay loop muted playsinline>
+            <source src="video/video3.min.mp4" type="video/mp4">
+          </video>
+          <div class="overlay"></div>
+        </div>
+        <div class="container">
+          <h2 class="section-title">第一弾はタロットAIチャット機能</h2>
+          <div class="services-content">
+            <p class="services-lead">
+              めちゃんこ占いの新機能「タロットAIチャット」は、伝統的なタロット占いと最新のAI技術を融合させたサービスです。
+            </p>
+            <p>
+              ただAIに鑑定させるのではなく、人間が占いを行うステップを再現し、精度が高くブレの少ない鑑定結果をお届けします。数多くのタロットの意味合いや鑑定の記録をAIが学習した鑑定で、あなたの人生をサポートします。
+            </p>
+            <p>
+              AIを活用することで、いつでもどこでもあなたの悩みや疑問に寄り添った鑑定結果を手軽に得られます。ふと思い立った瞬間や、深夜の不安な時間に、すぐに相談できる環境を整えています。
+            </p>
+            <div class="features-list">
+              <div class="feature-item">
+                <span class="feature-icon">🌟</span>
+                <h3>人間の占いを再現</h3>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🤖</span>
+                <h3>AIの活用</h3>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">⏰</span>
+                <h3>24時間いつでも</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="showcase" class="showcase">
+        <div class="container">
+          <h2 class="section-title">開発中の画面</h2>
+          
+          <div class="screen-item">
+            <div class="screen-image-wrapper">
+              <img src="img/teaser/demo1.jpg" alt="トップページ画面" class="screen-image">
+            </div>
+            <div class="screen-description">
+              <h3>直感的なトップページ</h3>
+              <p>シンプルで使いやすいトップページ。チャット欄に相談内容を入れれば、すぐに占いができます。</p>
+              <ul>
+                <li>チャット形式で簡単に占いができます</li>
+                <li>最適なアドバイスをAIが提案</li>
+                <li>シンプルで美しいデザイン</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="screen-item reverse">
+            <div class="screen-image-wrapper">
+              <img src="img/teaser/demo2.jpg" alt="チャット画面" class="screen-image">
+            </div>
+            <div class="screen-description">
+              <h3>リアルタイムのチャット画面</h3>
+              <p>あなたの質問に対して、AIと占い師の知見を組み合わせた的確なアドバイスをリアルタイムで提供します。</p>
+              <ul>
+                <li>すぐに返信が返ってくる</li>
+                <li>質問の詳細を深掘りする機能</li>
+                <li>タロットカードとの連携表示</li>
+                <li>会話の履歴保存機能 (β版では提供されません)</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="screen-item">
+            <div class="screen-image-wrapper">
+              <img src="img/teaser/demo3.jpg" alt="カード情報画面" class="screen-image">
+            </div>
+            <div class="screen-description">
+              <h3>詳細なカード情報画面</h3>
+              <p>タロットカードの詳細な意味や解釈を、美しいビジュアルと共に学べます。初心者から上級者まで、タロットの世界を深く探求できる情報が満載。</p>
+              <ul>
+                <li>歴史的背景と象徴の解説</li>
+                <li>各カードの正位置・逆位置の意味</li>
+                <li>関連するカードとの相互関係</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="timeline" class="timeline">
+        <div class="container">
+          <h2 class="section-title">めちゃんこ占いの歴史</h2>
+          
+          <div class="timeline">
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2015年3月</div>
+              <div class="timeline-content">
+                <h3>占星術の世界へ</h3>
+                <p>仕事の独立に伴い、学生時代から好きだった占星術を本格的に学び始める。自分のためだけの手段として始まったことが、やがてはサービスへと変わっていきました。</p>
+              </div>
+            </div>
+            
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2018年7月</div>
+              <div class="timeline-content">
+                <h3>めちゃんこ占い(占星術ver)公開</h3>
+                <p>占星術の知見を活かしライツを軸としたコンテンツを、多くの方に届けることができました。約7万字のテキストをコンテンツとして作成。AI登場前から似た様なことをしていますね。1000RT近い反響をいただき感謝。占星術も追々AIでサポートできたら幸せだなと思っています。</p>
+                <!-- <div class="timeline-image-container">
+                  <img src="img/astro/char.png" alt="旧キャラクター画像" class="timeline-image">
+                </div> -->
+                <blockquote class="twitter-tweet">
+                  <a href="https://twitter.com/emaaarion/status/1198265042614906880"></a>
+                </blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023年11月</div>
+              <div class="timeline-content">
+                <h3>めちゃんこタロットβ公開</h3>
+                <p>占星術からタロットへと領域を広げ、新たな<a href="https://tairot.com/gpt">サービスのβ版</a>を公開。より多角的な占いの視点を提供するための第一歩を踏み出しました。</p>
+              </div>
+            </div>
+                      
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2023年11月～</div>
+              <div class="timeline-content">
+                <h3>タロットと技術の融合</h3>
+                <p>タロットの各種講座の受講とAIの学習を本格化。伝統的な占いの知恵と最新テクノロジーを融合させるための準備期間となりました。師に恵まれたことに感謝を。</p>
+                <blockquote class="twitter-tweet">
+                  <a href="https://twitter.com/masato_kenryuu/status/1770068486485893591"></a>
+                </blockquote>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+              </div>
+            </div>
+            
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-date">2025年春</div>
+              <div class="timeline-content">
+                <h3>めちゃんこタロット公開予定</h3>
+                <p>これまでの経験と知識を結集し、より深く、より使いやすいサービスとして生まれ変わります。約50万字のテキストをコンテンツとして作成。</p>
+                <div class="timeline-image-container">
+                  <img src="img/tarot1/character_large_nobg.png" alt="新キャラクター画像" class="timeline-image">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="team-profile" class="team-profile">
+        <div class="container">
+          <h2 class="section-title">開発者の思い</h2>
+          
+          <div class="team-profile-container">
+            <div class="team-profile-profile">
+              <div class="team-profile-image-container">
+                <img src="img/prof.jpg" alt="開発者プロフィール画像" class="team-profile-image">
+              </div>
+              <div class="team-profile-info">
+                <h3>リョウ</h3>
+                <p class="team-profile-title">めちゃんこ占い開発者</p>
+                <div class="team-profile-social">
+                  <a href="https://x.com/ryryo" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="team-profile-thoughts">
+              <div class="thought-block">
+                <h3>めちゃんこ占いの指針</h3>
+                <p>めちゃんこ占いは、かっちりゆるい占いサイトです。占いと一口に言っても、朝のニュースの今日の運勢コーナーも占いですし、占い師の方に一対一の対面で鑑定を受けるのもまた占いです。そして占いは、人によって受け止め方がまったく違うものと言えます。真剣に受け止める人もいれば、都合が良い部分だけ信じる人、まったく信じないという人もいます。</p>
+                <p>このサイトを作っている私はプロの占い師でもなく普段はIT系なお仕事をしており、占いに対しては、神秘的・エンタメ・非科学そのすべての印象を持っています。ロマンを感じるし、面白いなぁと思うし、でもやっぱり非科学的だなと思っているのです。多面性を愛してこその人生派。</p>
+              </div>
+              
+              <div class="thought-block">
+                <h3>AIと占いの未来</h3>
+                <p>この度、めちゃんこタロットを公開するにあたり、当初はChatGPTを使ったタロット占いの支援ツールを作成していました。巷でAIが流行する中、個人的にも日常的にChatGPTでタロット占いをしていましたが、それをより使いやすくしたサービスとして提供することができました。</p>
+                <p>SNSの占いコミュニティでは、占い師がAIに置き換わるのでは？という議論もありますが、実際に使ってみて感じるのは、AIは優れたツールでありつつも、人間が鑑定するのとは別物だということです。タロットでは、まずどのような問いを立てるか、出てきた鑑定結果をどう生き方に反映し深めていくか検討することも大切な部分です。</p>
+                <p>そして人に我が強くある限り、どれだけAIの性能が向上しても、自分にとって都合の良い解釈を吐かせるだけのマシーンになってしまうと思うのです。AIと人間、それぞれの利点を活かした、新しい形の占いサービスを目指しています。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+
       <!-- お問い合わせ -->
       <section id="contact" class="contact">
         <div class="container">
@@ -400,8 +608,34 @@
         </div>
       </section>
 
+
+      <section id="contact" class="contact">
+        <div class="contact-wave top-wave">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+            <path fill="#F2F0FA" fill-opacity="1" d="M0,100 C360,150 720,0 1440,100 L1440,0 L0,0 Z"></path>
+          </svg>
+        </div>
+        <div class="container">
+          <div class="contact-content">
+            <h2>クローズド公開予定</h2>
+            <p>サービス初期は、身近な方を中心にクローズドで公開予定です。ご興味ある場合は、Xまでご連絡ください。</p>
+            <a href="https://twitter.com/ryryo" target="_blank" rel="noopener noreferrer" class="button button-contact">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+              Xでフォローする
+            </a>
+          </div>
+        </div>
+        <div class="contact-wave bottom-wave">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+            <path fill="#28195E" fill-opacity="1" d="M0,100 C360,50 720,150 1440,100 L1440,200 L0,200 Z"></path>
+          </svg>
+        </div>
+      </section>
+
     </main>
 
+
+    
     <!-- フッター -->
     <footer class="site-footer">
       <div class="container">
@@ -417,10 +651,10 @@
         <div class="footer-col">
           <h3>サービス</h3>
           <ul>
-            <li><a href="#service">サービス概要</a></li>
-            <li><a href="#features">特徴</a></li>
-            <li><a href="#operations">運用代行</a></li>
-            <li><a href="#cases">事例と実績</a></li>
+            <li><a href="#overview">サービス概要</a></li>
+            <li><a href="#feature-cards">特徴</a></li>
+            <li><a href="#service-cards">運用代行</a></li>
+            <li><a href="#case-studies">事例と実績</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -439,15 +673,29 @@
             &copy; 2025 エルピト All Rights Reserved.
           </div>
           <div class="social-icons">
-            <!-- ここにSNSアイコンがJavaScriptで動的に追加されます -->
+            <a href="https://twitter.com/example" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+            </a>
+            <a href="https://facebook.com/example" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <a href="https://instagram.com/example" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://youtube.com/example" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <a href="https://line.me/example" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 5.8 2 10.5c0 2.4 1.1 4.5 2.9 6.1.3.3.7.5.6 1-.1.4-.3.9-.5 1.4-.2.5 0 .7.5.5 1.2-.5 3.2-1.8 4.5-2.5.5-.3.8-.3 1.1-.3 5.5 0 10-3.8 10-8.3C21 5.8 17.5 2 12 2z"></path></svg>
+            </a>
           </div>
         </div>
       </div>
     </footer>
     
-    <script src="js/script.js"></script>
+    <script src="js/script.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="js/performance-graph.js"></script>
+    <script src="js/performance-graph.js" type="module"></script>
   </body>
 </html>
 
