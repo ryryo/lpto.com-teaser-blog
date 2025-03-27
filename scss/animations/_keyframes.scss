@@ -95,6 +95,87 @@
   100% { transform: translate(0, 0) rotate(405deg); }
 }
 
+// ハンバーガーメニュー用アニメーション
+@keyframes hamburgerTop {
+  0% {
+    top: 0;
+    transform: rotate(0);
+  }
+  50% {
+    top: 10px;
+    transform: rotate(0);
+  }
+  100% {
+    top: 10px;
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes hamburgerMiddle {
+  0% {
+    opacity: 1;
+    width: 75%;
+  }
+  50% {
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes hamburgerBottom {
+  0% {
+    top: 20px;
+    transform: rotate(0);
+  }
+  50% {
+    top: 10px;
+    transform: rotate(0);
+  }
+  100% {
+    top: 10px;
+    transform: rotate(-135deg);
+  }
+}
+
+// モバイルナビゲーション用アニメーション
+@keyframes navFadeIn {
+  0% {
+    opacity: 0;
+    clip-path: circle(0% at 100% 0);
+  }
+  100% {
+    opacity: 1;
+    clip-path: circle(150% at 100% 0);
+  }
+}
+
+@keyframes navFadeOut {
+  0% {
+    opacity: 1;
+    clip-path: circle(150% at 100% 0);
+  }
+  100% {
+    opacity: 0;
+    clip-path: circle(0% at 100% 0);
+    display: none;
+  }
+}
+
+@keyframes navItemFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // 開発者セクション用のアニメーション
 @keyframes float-rotate-1 {
   0% { transform: translate(0, 0) rotate(0deg); }
