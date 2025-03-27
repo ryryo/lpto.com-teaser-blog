@@ -1,0 +1,160 @@
+@use '../utils/mixins' as *;
+
+.comparison-table {
+  padding: 5rem 0;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  &__subtitle {
+    text-align: center;
+    color: var(--text-medium);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow-x: auto; // 横スクロールを有効化
+  }
+  
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    display: table; // 常に表示する
+    min-width: 650px; // モバイルでスクロールするための最小幅
+    
+    th, td {
+      padding: 1.25rem 1.5rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    th {
+      font-weight: 600;
+      color: var(--text-white);
+      background-color: var(--secondary-500);
+      
+      &:first-child {
+        width: 20%; // 1列目の幅を小さく
+      }
+      
+      &:not(:first-child) {
+        text-align: center;
+        width: 40%; // 2列目と3列目の幅を広く
+      }
+    }
+    
+    td {
+      vertical-align: middle;
+      
+      &:not(:first-child) {
+        text-align: center;
+      }
+    }
+    
+    tr {
+      &:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+      
+      &.highlight {
+        background-color: var(--primary-50);
+        
+        td:first-child {
+          position: relative;
+          font-weight: 600;
+          
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: var(--primary-500);
+          }
+        }
+      }
+    }
+    
+    .feature-name {
+      font-weight: 600;
+      color: var(--text-dark);
+      font-size: 1.05rem;
+      margin-bottom: 0;
+    }
+    
+    .feature-detail {
+      margin-top: 0.5rem;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    
+    .feature-subdesc {
+      margin-top: 0.25rem;
+      font-size: 0.85rem;
+      color: var(--text-medium);
+      line-height: 1.4;
+    }
+    
+    .check, .cross {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+    }
+    
+    .check {
+      color: var(--primary-600);
+    }
+    
+    .cross {
+      color: var(--state-danger);
+    }
+  }
+  
+  // モバイル用カード表示 - 非表示にする
+  &__mobile-cards {
+    display: none; // 常に非表示
+  }
+  
+  // スクロール可能なことを示すインジケーター（モバイル用）
+  &__scroll-indicator {
+    display: none;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-medium);
+    font-size: 0.85rem;
+    
+    @include respond-to(sm-down) {
+      display: block;
+    }
+    
+    svg {
+      margin-left: 0.25rem;
+      animation: scroll-hint 1.5s ease-in-out infinite;
+    }
+  }
+  
+  @keyframes scroll-hint {
+    0%, 100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+  }
+} 

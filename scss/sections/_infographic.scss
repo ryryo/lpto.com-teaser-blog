@@ -1,0 +1,264 @@
+@use '../utils/mixins' as *;
+
+.infographic {
+  padding: 2rem 0;
+  
+  @include respond-to(md) {
+    padding: 3rem 0;
+  }
+  
+  @include respond-to(lg) {
+    padding: 5rem 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  &__subtitle {
+    text-align: center;
+    color: var(--text-medium);
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    @include respond-to(md) {
+      margin-bottom: 3rem;
+    }
+  }
+  
+  &__content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 0.5rem;
+    
+    @include respond-to(md) {
+      padding: 0 1rem;
+    }
+  }
+  
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 2rem;
+    
+    @include respond-to(md) {
+      margin-bottom: 3rem;
+    }
+    
+    @include respond-to(lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      
+      // 横向きの線（大画面のみ）
+      &::before {
+        content: '';
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background-color: var(--primary-100);
+        z-index: 1;
+      }
+    }
+  }
+  
+  &__step {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    z-index: 2;
+    
+    // モバイルでの縦線
+    &:not(:last-child) {
+      position: relative;
+      padding-bottom: 1.5rem;
+      
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50px;
+        left: 22.5px;
+        width: 2px;
+        height: calc(100% - 30px);
+        background-color: var(--primary-100);
+        z-index: 1;
+      }
+      
+      @include respond-to(lg) {
+        padding-bottom: 0; // 大画面では余分なパディングを削除
+      }
+    }
+    
+    @include respond-to(md) {
+      margin-bottom: 2rem;
+      
+      &:not(:last-child)::before {
+        top: 60px;
+        left: 25px;
+        height: calc(100% - 30px);
+      }
+    }
+    
+    @include respond-to(lg) {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      
+      &:nth-child(n+4) {
+        margin-left: 15%;
+      }
+      
+      // 縦線を非表示に
+      &:not(:last-child)::before {
+        display: none;
+      }
+      
+      // 横方向の矢印（大画面のみ）- 角丸デザインに変更
+      &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 70px;
+        right: -10%;
+        width: 16px;
+        height: 16px;
+        border-top: 4px solid var(--primary-300);
+        border-right: 4px solid var(--primary-300);
+        transform: translateY(-50%) rotate(45deg);
+        border-radius: 3px;
+        z-index: 2;
+      }
+    }
+    
+    @include respond-to(xl) {
+      width: 19%;
+      
+      &:nth-child(n+4) {
+        margin-left: 0;
+      }
+      
+      &:not(:last-child)::after {
+        right: -12%;
+      }
+    }
+    
+    &-number {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: var(--primary-500);
+      color: var(--text-white);
+      font-size: 1.15rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1rem 0 0;
+      position: relative;
+      z-index: 3;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+      
+      @include respond-to(md) {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+        margin: 0 1.5rem 0 0;
+      }
+      
+      @include respond-to(lg) {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin: 0 auto 1.5rem;
+      }
+    }
+    
+    &-content {
+      background-color: var(--bg-white);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      flex: 1;
+      
+      @include respond-to(md) {
+        padding: 1.25rem;
+      }
+      
+      @include respond-to(lg) {
+        height: 180px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+      
+      h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary-600);
+        margin: 0 0 0.5rem;
+        
+        @include respond-to(md) {
+          font-size: 1.25rem;
+          margin: 0 0 0.75rem;
+        }
+      }
+      
+      p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--text-medium);
+        margin: 0;
+        
+        @include respond-to(md) {
+          font-size: 0.95rem;
+        }
+      }
+    }
+    
+    &-icon {
+      display: none;
+      
+      @include respond-to(lg) {
+        display: block;
+        margin-bottom: 1rem;
+        
+        svg {
+          width: 36px;
+          height: 36px;
+          color: var(--primary-500);
+        }
+      }
+      
+      @include respond-to(xl) {
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+  
+  // アニメーション
+  &__step {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    
+    @for $i from 1 through 5 {
+      &:nth-child(#{$i}) {
+        animation-delay: #{$i * 0.15}s;
+      }
+    }
+  }
+} 

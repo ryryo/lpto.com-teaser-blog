@@ -1,6 +1,6 @@
 <!-- 
--[] めちゃんこからhtmlとcss移植する
--[] この段階で一度レスポンシブ対応
+-[x] めちゃんこからhtmlとcss移植する
+-[x] この段階で一度レスポンシブ対応
 -[] 計画書ですべてのパーツを踏襲させる⇒必要な画像素材一覧
 -[] 画像素材を用意する
 -[] デザインの調整
@@ -60,10 +60,16 @@
           <p>実店舗ビジネスに特化したLP改善サービス</p>
           <a href="#contact" class="btn btn-accent">無料相談はこちら</a>
         </div>
+        <div class="hero__scroll-indicator">
+          <span class="hero__scroll-indicator-text">Scroll</span>
+          <div class="hero__scroll-indicator-arrow">
+            <div class="scroll-arrow"></div>
+          </div>
+        </div>
       </section>
 
       <!-- サービス概要 -->
-      <section id="overview" class="overview">
+      <section id="overview" class="overview section-bg-gradient-soft">
         <div class="container">
           <h2 class="section-title">エルピトとは</h2>
           <div class="overview__content">
@@ -90,7 +96,7 @@
       </section>
 
       <!-- サービスの特徴 -->
-      <section id="feature-cards" class="feature-cards">
+      <section id="feature-cards" class="feature-cards section-bg-white">
         <div class="container">
           <h2 class="section-title">第一弾:スワイプLP機能</h2>
           <div class="feature-cards__content">
@@ -124,8 +130,227 @@
         </div>
       </section>
 
+      <!-- 比較テーブル -->
+      <section id="comparison-table" class="comparison-table section-bg-white">
+        <div class="container">
+          <h2 class="section-title">従来のLPとの比較</h2>
+          <p class="comparison-table__subtitle">エルピトがもたらす革新的な違い</p>
+          
+          <div class="comparison-table__wrapper">
+            <table class="comparison-table__table">
+              <thead>
+                <tr>
+                  <th>機能比較</th>
+                  <th>従来のLP</th>
+                  <th>エルピト</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="feature-name">ユーザー体験</td>
+                  <td>
+                    <span class="cross">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">静的なページ構成のみ</div>
+                  </td>
+                  <td>
+                    <span class="check">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">インタラクティブなスワイプ体験</div>
+                  </td>
+                </tr>
+                <tr class="highlight">
+                  <td class="feature-name">データ分析</td>
+                  <td>
+                    <span class="cross">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">基本的なアクセス解析のみ</div>
+                  </td>
+                  <td>
+                    <span class="check">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">AIによる高度な行動分析</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="feature-name">改善サイクル</td>
+                  <td>
+                    <div class="feature-detail">手動での更新が必要</div>
+                    <div class="feature-subdesc">設計・コーディングの知識が必要</div>
+                  </td>
+                  <td>
+                    <span class="check">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">データに基づく自動最適化提案</div>
+                    <div class="feature-subdesc">AIが最適な改善案を提案</div>
+                  </td>
+                </tr>
+                <tr class="highlight">
+                  <td class="feature-name">モバイル対応</td>
+                  <td>
+                    <div class="feature-detail">レスポンシブ対応のみ</div>
+                    <div class="feature-subdesc">デバイスサイズに合わせた表示</div>
+                  </td>
+                  <td>
+                    <span class="check">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">スマホ操作に最適化されたUI/UX</div>
+                    <div class="feature-subdesc">スワイプ操作で直感的に閲覧</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="feature-name">コンテンツ更新</td>
+                  <td>
+                    <div class="feature-detail">デザイナーに依頼が必要</div>
+                    <div class="feature-subdesc">更新に時間とコストがかかる</div>
+                  </td>
+                  <td>
+                    <span class="check">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">簡単な管理画面から更新可能</div>
+                    <div class="feature-subdesc">専門知識不要で即時反映</div>
+                  </td>
+                </tr>
+                <tr class="highlight">
+                  <td class="feature-name">運用サポート</td>
+                  <td>
+                    <div class="feature-detail">限定的なサポート</div>
+                    <div class="feature-subdesc">制作完了後のサポートは追加料金</div>
+                  </td>
+                  <td>
+                    <span class="check">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                      </svg>
+                    </span>
+                    <div class="feature-detail">専任担当者による継続的支援</div>
+                    <div class="feature-subdesc">月次レポートと改善提案を含む</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="comparison-table__scroll-indicator">
+            横にスクロールして全体を表示
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ビフォー/アフター比較 -->
+      <section id="before-after" class="before-after section-bg-gradient-soft">
+        <div class="container">
+          <h2 class="section-title">導入効果</h2>
+          <p class="before-after__subtitle">エルピト導入前後の比較</p>
+          
+          <div class="before-after__container">
+            <div class="before-after__slider">
+              <div class="before-after__image before-after__image--before" aria-label="導入前のランディングページ">
+                <img src="img/before-after/before-lp.jpg" alt="エルピト導入前のランディングページ">
+                <div class="before-after__label before-after__label--before">Before</div>
+              </div>
+              <div class="before-after__image before-after__image--after" aria-label="導入後のランディングページ">
+                <img src="img/before-after/after-lp.jpg" alt="エルピト導入後のランディングページ">
+                <div class="before-after__label before-after__label--after">After</div>
+              </div>
+              <div class="before-after__handle" aria-label="スライダーを左右に動かして比較">
+                <div class="before-after__handle-line"></div>
+                <div class="before-after__handle-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            
+            <div class="before-after__metrics">
+              <div class="before-after__metric before-after__metric--before">
+                <h3 class="before-after__metric-title">導入前</h3>
+                <ul class="before-after__metric-list">
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">コンバージョン率</span>
+                    <span class="before-after__metric-value">1.2%</span>
+                  </li>
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">平均滞在時間</span>
+                    <span class="before-after__metric-value">45秒</span>
+                  </li>
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">直帰率</span>
+                    <span class="before-after__metric-value">78%</span>
+                  </li>
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">モバイル表示速度</span>
+                    <span class="before-after__metric-value">4.8秒</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="before-after__vs">VS</div>
+              
+              <div class="before-after__metric before-after__metric--after">
+                <h3 class="before-after__metric-title">導入後</h3>
+                <ul class="before-after__metric-list">
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">コンバージョン率</span>
+                    <span class="before-after__metric-value">4.5%</span>
+                    <span class="before-after__metric-change up">+275%</span>
+                  </li>
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">平均滞在時間</span>
+                    <span class="before-after__metric-value">3分12秒</span>
+                    <span class="before-after__metric-change up">+326%</span>
+                  </li>
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">直帰率</span>
+                    <span class="before-after__metric-value">32%</span>
+                    <span class="before-after__metric-change up">-59%</span>
+                  </li>
+                  <li class="before-after__metric-item">
+                    <span class="before-after__metric-label">モバイル表示速度</span>
+                    <span class="before-after__metric-value">1.2秒</span>
+                    <span class="before-after__metric-change up">-75%</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- 運用代行 -->
-      <section id="service-cards" class="service-cards">
+      <section id="service-cards" class="service-cards section-bg-light">
         <div class="container">
           <h2 class="section-title">運用代行サービス</h2>
           <div class="service-cards__intro">
@@ -158,7 +383,7 @@
       </section>
 
       <!-- 事例と実績 -->
-      <section id="case-studies" class="case-studies">
+      <section id="case-studies" class="case-studies section-bg-light">
         <div class="container">
           <h2 class="section-title">サロン業種別の効果シミュレーション</h2>
           
@@ -210,8 +435,263 @@
         </div>
       </section>
 
+      <!-- 実績の数値一覧 -->
+      <section id="achievement-stats" class="achievement-stats section-bg-light">
+        <div class="container">
+          <h2 class="section-title">導入実績</h2>
+          <p class="achievement-stats__subtitle">数字で見るエルピトの効果</p>
+          
+          <div class="achievement-stats__grid">
+            <div class="stat-item stat-item--primary animated">
+              <div class="stat-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                  <polyline points="3.29 7 12 12 20.71 7"></polyline>
+                  <line x1="12" y1="22" x2="12" y2="12"></line>
+                </svg>
+              </div>
+              <div class="stat-item__value-wrapper">
+                <div class="stat-item__value">150<span class="unit">件</span></div>
+              </div>
+              <div class="stat-item__label">導入実績</div>
+              <div class="stat-item__description">全国のサロンに導入されたエルピトの実績数</div>
+            </div>
+            
+            <div class="stat-item stat-item--secondary animated">
+              <div class="stat-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6"></path>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                  <path d="M9 21h6"></path>
+                  <path d="M9 21a3 3 0 0 1-3-3v-2a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v2a3 3 0 0 1-3 3"></path>
+                </svg>
+              </div>
+              <div class="stat-item__value-wrapper">
+                <div class="stat-item__value">150<span class="unit">%</span></div>
+              </div>
+              <div class="stat-item__label">CV率向上</div>
+              <div class="stat-item__description">従来のLPと比較した際のコンバージョン率の平均向上率</div>
+            </div>
+            
+            <div class="stat-item stat-item--accent1 animated">
+              <div class="stat-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="stat-item__value-wrapper">
+                <div class="stat-item__value">230<span class="unit">%</span></div>
+              </div>
+              <div class="stat-item__label">滞在時間増加</div>
+              <div class="stat-item__description">スワイプLPによるユーザー滞在時間の平均増加率</div>
+            </div>
+            
+            <div class="stat-item stat-item--accent2 animated">
+              <div class="stat-item__icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                </svg>
+              </div>
+              <div class="stat-item__value-wrapper">
+                <div class="stat-item__value stat-item__value--plus">100000</div>
+              </div>
+              <div class="stat-item__label">月間分析データ数</div>
+              <div class="stat-item__description">AIが処理・分析する毎月のユーザー行動データポイント</div>
+            </div>
+          </div>
+          
+          <div class="achievement-stats__link">
+            <a href="#case-studies" class="btn btn-outline">
+              詳細を見る
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 統計情報カード -->
+      <section id="stat-cards" class="stat-cards section-bg-white">
+        <div class="container">
+          <h2 class="section-title">データで見る効果</h2>
+          <p class="stat-cards__subtitle">エルピト導入企業の平均的な改善効果</p>
+          
+          <div class="stat-cards__grid">
+            <div class="stat-card stat-card--teal animated">
+              <div class="stat-card__header">
+                <div class="stat-card__header-content">
+                  <div class="stat-card__category">集客効果</div>
+                  <div class="stat-card__main-stat">
+                    Web流入数 200%増
+                  </div>
+                </div>
+              </div>
+              <div class="stat-card__body">
+                <div class="stat-card__sub-stats">
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">直帰率</div>
+                    <div class="stat-card__sub-stat-value">40%減</div>
+                  </div>
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">滞在時間</div>
+                    <div class="stat-card__sub-stat-value">3倍</div>
+                  </div>
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">ページ閲覧数</div>
+                    <div class="stat-card__sub-stat-value">2.5倍</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card stat-card--green animated">
+              <div class="stat-card__header">
+                <div class="stat-card__header-content">
+                  <div class="stat-card__category">コスト効率</div>
+                  <div class="stat-card__main-stat">
+                    広告費用対効果 150%向上
+                  </div>
+                </div>
+              </div>
+              <div class="stat-card__body">
+                <div class="stat-card__sub-stats">
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">クリック単価</div>
+                    <div class="stat-card__sub-stat-value">30%減</div>
+                  </div>
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">コンバージョン単価</div>
+                    <div class="stat-card__sub-stat-value">45%減</div>
+                  </div>
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">ROAS</div>
+                    <div class="stat-card__sub-stat-value">2.4倍</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="stat-card stat-card--blue animated">
+              <div class="stat-card__header">
+                <div class="stat-card__header-content">
+                  <div class="stat-card__category">顧客満足度</div>
+                  <div class="stat-card__main-stat">
+                    ユーザー評価 4.8/5
+                  </div>
+                </div>
+              </div>
+              <div class="stat-card__body">
+                <div class="stat-card__sub-stats">
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">再訪問率</div>
+                    <div class="stat-card__sub-stat-value">65%増</div>
+                  </div>
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">SNS共有</div>
+                    <div class="stat-card__sub-stat-value">3.2倍</div>
+                  </div>
+                  <div class="stat-card__sub-stat">
+                    <div class="stat-card__sub-stat-label">口コミ投稿</div>
+                    <div class="stat-card__sub-stat-value">2.8倍</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       
-      <section class="tabbed-charts">
+      <!-- インフォグラフィック -->
+      <section id="infographic" class="infographic section-bg-light">
+        <div class="container">
+          <h2 class="section-title">お客様サポートの流れ</h2>
+          <p class="infographic__subtitle">エルピトでは、お客様のLP運用をシンプルかつ効果的にサポートするプロセスを確立しています。</p>
+          <div class="infographic__content">
+            <div class="infographic__steps">
+              <div class="infographic__step">
+                <div class="infographic__step-number">1</div>
+                <div class="infographic__step-content">
+                  <div class="infographic__step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  </div>
+                  <h3>初期分析</h3>
+                  <p>お客様の現状のLP分析を行い、改善ポイントを特定します。</p>
+                </div>
+              </div>
+              <div class="infographic__step">
+                <div class="infographic__step-number">2</div>
+                <div class="infographic__step-content">
+                  <div class="infographic__step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                      <line x1="9" y1="9" x2="15" y2="15"></line>
+                      <line x1="15" y1="9" x2="9" y2="15"></line>
+                    </svg>
+                  </div>
+                  <h3>戦略立案</h3>
+                  <p>データに基づいたLP改善戦略を策定します。</p>
+                </div>
+              </div>
+              <div class="infographic__step">
+                <div class="infographic__step-number">3</div>
+                <div class="infographic__step-content">
+                  <div class="infographic__step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="12" y1="2" x2="12" y2="6"></line>
+                      <line x1="12" y1="18" x2="12" y2="22"></line>
+                      <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
+                      <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
+                      <line x1="2" y1="12" x2="6" y2="12"></line>
+                      <line x1="18" y1="12" x2="22" y2="12"></line>
+                      <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
+                      <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                    </svg>
+                  </div>
+                  <h3>LP実装</h3>
+                  <p>最適化されたLPの構築・実装を行います。</p>
+                </div>
+              </div>
+              
+              <div class="infographic__step">
+                <div class="infographic__step-number">4</div>
+                <div class="infographic__step-content">
+                  <div class="infographic__step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </div>
+                  <h3>データ収集</h3>
+                  <p>ユーザー行動データを収集・分析します。</p>
+                </div>
+              </div>
+              
+              <div class="infographic__step">
+                <div class="infographic__step-number">5</div>
+                <div class="infographic__step-content">
+                  <div class="infographic__step-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="23 4 23 10 17 10"></polyline>
+                      <polyline points="1 20 1 14 7 14"></polyline>
+                      <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                  </div>
+                  <h3>継続改善</h3>
+                  <p>データを基に定期的にLPを改善します。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="tabbed-charts section-bg-white">
         <div class="container">
           <h2 class="section-title">実績データ</h2>
           <p class="section-description">過去5年間の成長と実績をグラフで紹介します</p>
@@ -237,7 +717,7 @@
       </section>
 
       <!-- よくある質問 -->
-      <section id="faq" class="faq">
+      <section id="faq" class="faq section-bg-light">
         <div class="container">
           <h2 class="section-title">よくある質問</h2>
           
@@ -296,7 +776,7 @@
       </section>
 
       <!-- 料金プラン -->
-      <section id="pricing" class="pricing">
+      <section id="pricing" class="pricing section-bg-white">
         <div class="container">
           <h2 class="section-title">料金プラン</h2>
           
@@ -360,8 +840,98 @@
         </div>
       </section>
 
+      <!-- 顧客の声 -->
+      <section id="testimonials" class="testimonials section-bg-light">
+        <div class="container">
+          <h2 class="section-title">お客様の声</h2>
+          <p class="testimonials__subtitle">エルピトを導入いただいたお客様からの評価</p>
+          
+          <!-- デスクトップ・タブレット用グリッド表示 -->
+          <div class="testimonials__grid">
+            <!-- 顧客1 -->
+            <div class="testimonial-card animated">
+              <div class="testimonial-card__header">
+                <img src="/img/testimonials/testimonial-1.jpg" alt="田中 美香" class="testimonial-card__image">
+                <div class="testimonial-card__info">
+                  <h3 class="testimonial-card__name">田中 美香</h3>
+                  <p class="testimonial-card__position">Nail Salon MIRAGE / オーナー</p>
+                  <div class="testimonial-card__rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card__content">
+                <p>スワイプLPを導入してから、お客様の滞在時間が大幅に伸び、予約率が35%も向上しました。特にネイルデザインを見やすく紹介できるようになり、お客様の満足度も高いです。</p>
+              </div>
+              <div class="testimonial-card__date">2024年4月</div>
+            </div>
+            
+            <!-- 顧客2 -->
+            <div class="testimonial-card animated">
+              <div class="testimonial-card__header">
+                <img src="/img/testimonials/testimonial-2.jpg" alt="佐藤 健太" class="testimonial-card__image">
+                <div class="testimonial-card__info">
+                  <h3 class="testimonial-card__name">佐藤 健太</h3>
+                  <p class="testimonial-card__position">Eyelash Salon LUCE / マーケティング担当</p>
+                  <div class="testimonial-card__rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star" style="opacity: 0.3;">★</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card__content">
+                <p>リスティング広告との連携で、広告費を抑えながら集客効果が出ています。データ分析に基づいた改善提案も的確で、常に進化し続けるLPの効果を実感しています。</p>
+              </div>
+              <div class="testimonial-card__date">2024年5月</div>
+            </div>
+            
+            <!-- 顧客3 -->
+            <div class="testimonial-card animated">
+              <div class="testimonial-card__header">
+                <img src="/img/testimonials/testimonial-3.jpg" alt="山田 優子" class="testimonial-card__image">
+                <div class="testimonial-card__info">
+                  <h3 class="testimonial-card__name">山田 優子</h3>
+                  <p class="testimonial-card__position">Beauty Salon CHARM / 経営者</p>
+                  <div class="testimonial-card__rating">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
+              </div>
+              <div class="testimonial-card__content">
+                <p>エルピトの運用代行サービスは本当に頼りになります。自分ではわからなかったWeb集客の課題を明確にし、解決策を提案してくれるので、安心してお任せできています。新規顧客が2倍以上に増えました！</p>
+              </div>
+              <div class="testimonial-card__date">2024年6月</div>
+            </div>
+          </div>
+          
+          <!-- モバイル用カルーセル表示 -->
+          <div class="testimonials__carousel">
+            <div class="testimonials__carousel-container">
+              <!-- カルーセル内の各カード（上記と同じカードが入ります） -->
+              <!-- JavaScriptで制御されます -->
+            </div>
+            <div class="testimonials__carousel-dots">
+              <span class="testimonials__carousel-dot active" data-index="0"></span>
+              <span class="testimonials__carousel-dot" data-index="1"></span>
+              <span class="testimonials__carousel-dot" data-index="2"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- サービス紹介動画セクション -->
-      <section id="video-section" class="video-section">
+      <section id="video-section" class="video-section section-bg-white">
         <div class="video-background">
           <video autoplay loop muted playsinline>
             <source src="video/service-intro.mp4" type="video/mp4">
@@ -399,7 +969,7 @@
       </section>
   
       <!-- 機能紹介 -->
-      <section id="showcase" class="showcase">
+      <section id="showcase" class="showcase section-bg-gradient-soft">
         <div class="container">
           <h2 class="section-title">スワイプLPの特徴</h2>
           
@@ -452,7 +1022,7 @@
       </section>
   
       <!-- サービスの成長 -->
-      <section id="timeline" class="timeline">
+      <section id="timeline" class="timeline section-bg-light">
         <div class="container">
           <h2 class="section-title">サービスの進化</h2>
           
@@ -503,7 +1073,7 @@
       </section>
   
       <!-- サービス理念 -->
-      <section id="team-profile" class="team-profile">
+      <section id="team-profile" class="team-profile section-bg-white">
         <div class="container">
           <h2 class="section-title">サービス理念</h2>
           
@@ -537,7 +1107,7 @@
   
 
       <!-- お問い合わせフォーム -->
-      <section id="contact-form" class="contact-form-section">
+      <section id="contact-form" class="contact-form-section section-bg-gradient-accent">
         <div class="container">
           <h2 class="section-title">お気軽にご相談ください</h2>
           <p class="contact-form-section__description">サービスについてのご質問や導入に関するご相談など、お気軽にお問い合わせください。</p>
@@ -586,7 +1156,7 @@
       </section>
 
 
-      <section id="bottom-notice" class="bottom-notice">
+      <section id="bottom-notice" class="bottom-notice section-bg-white">
         <div class="container">
           <div class="bottom-notice__content">
             <h2 class="bottom-notice__title">クローズド公開中</h2>
@@ -598,6 +1168,8 @@
           </div>
         </div>
       </section>
+
+
 
     </main>
 

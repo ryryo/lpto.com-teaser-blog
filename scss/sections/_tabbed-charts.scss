@@ -1,9 +1,7 @@
 @use '../utils/mixins' as *;
-@use '../animations/keyframes';
 
 .tabbed-charts {
-  padding: 40px 0;
-  background-color: var(--bg-light);
+  padding: 4rem 0;
   
   @include respond-to(md) {
     padding: 60px 0;

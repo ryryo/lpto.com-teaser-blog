@@ -1,0 +1,288 @@
+@use '../utils/mixins' as *;
+
+.before-after {
+  padding: 5rem 0;
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  &__subtitle {
+    text-align: center;
+    color: var(--text-medium);
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  &__container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  // ビフォー・アフタースライダー
+  &__slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 3rem;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    
+    @include respond-to(md) {
+      height: 400px;
+    }
+    
+    @include respond-to(lg) {
+      height: 500px;
+    }
+  }
+  
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    &--before {
+      z-index: 1;
+    }
+    
+    &--after {
+      z-index: 2;
+      width: 50%;
+      border-right: 2px solid var(--bg-white);
+    }
+  }
+  
+  &__label {
+    position: absolute;
+    bottom: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: var(--text-white);
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    font-size: 0.9rem;
+    z-index: 3;
+    
+    &--before {
+      left: 1rem;
+    }
+    
+    &--after {
+      right: 1rem;
+    }
+  }
+  
+  &__handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: var(--bg-white);
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: ew-resize;
+    
+    &-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--primary-500);
+    }
+    
+    &-circle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background-color: var(--primary-500);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      
+      svg {
+        width: 15px;
+        height: 15px;
+        color: var(--text-white);
+        
+        &:first-child {
+          margin-right: -5px;
+        }
+        
+        &:last-child {
+          margin-left: -5px;
+        }
+      }
+    }
+  }
+  
+  // メトリクス表示部分
+  &__metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    
+    @include respond-to(md) {
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+  
+  &__metric {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    
+    &--before {
+      border-top: 4px solid var(--text-medium);
+    }
+    
+    &--after {
+      border-top: 4px solid var(--primary-500);
+    }
+  }
+  
+  &__vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-medium);
+    padding: 0 1rem;
+    
+    @include respond-to(md) {
+      padding: 0 2rem;
+    }
+  }
+  
+  &__metric-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background-color: var(--border-color);
+      margin: 0.5rem auto 0;
+    }
+  }
+  
+  &__metric-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  &__metric-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  
+  &__metric-label {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+  }
+  
+  &__metric-value {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+  }
+  
+  &__metric-change {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+    
+    &.up {
+      color: var(--primary-600);
+      
+      &::before {
+        content: '▲';
+        display: inline-block;
+        margin-right: 2px;
+        font-size: 0.7rem;
+      }
+    }
+    
+    &.down {
+      color: var(--state-danger);
+      
+      &::before {
+        content: '▼';
+        display: inline-block;
+        margin-right: 2px;
+        font-size: 0.7rem;
+      }
+    }
+  }
+  
+  // アニメーション
+  &.animated {
+    .before-after__slider {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .before-after__metric {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeInUp 0.6s ease-out forwards;
+      
+      &--before {
+        animation-delay: 0.2s;
+      }
+      
+      &--after {
+        animation-delay: 0.4s;
+      }
+    }
+    
+    .before-after__metric-item {
+      opacity: 0;
+      animation: fadeIn 0.5s ease-out forwards;
+      
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{0.5 + $i * 0.1}s;
+        }
+      }
+    }
+  }
+} 

@@ -28,17 +28,25 @@
 @use 'layout/footer';
 
 // Sections
-@use 'sections/hero';
-@use 'sections/overview';
-@use 'sections/video-section';
-@use 'sections/feature-cards';
-@use 'sections/showcase';
-@use 'sections/timeline';
-@use 'sections/faq';
-@use 'sections/team-profile';
-@use 'sections/bottom-notice';
-@use 'sections/contact-form';
-@use 'sections/service-cards';
-@use 'sections/case-studies';
-@use 'sections/pricing';
-@use 'sections/tabbed-charts';
+@use 'sections/hero'; // ヒーローセクション
+@use 'sections/overview'; // サービス概要
+@use 'sections/video-section'; // 動画背景セクション
+@use 'sections/feature-cards'; // 特徴カード
+@use 'sections/showcase'; // 
+@use 'sections/timeline'; // タイムライン
+@use 'sections/faq'; // FAQセクション
+@use 'sections/team-profile'; // チームプロフィール
+@use 'sections/bottom-notice'; // 下部お知らせ
+@use 'sections/contact-form'; // お問い合わせフォーム
+@use 'sections/service-cards'; // サービスカード
+@use 'sections/case-studies'; // 実績
+@use 'sections/pricing'; // 料金
+@use 'sections/tabbed-charts'; // タブ付きグラフ
+
+// 新規追加セクション
+@use 'sections/testimonials';          // 顧客の声
+@use 'sections/achievement-stats';     // 実績の数値一覧
+@use 'sections/comparison-table';      // 比較テーブル
+@use 'sections/stat-cards';            // 統計情報カード
+@use 'sections/infographic';           // インフォグラフィック
+@use 'sections/before-after';          // ビフォー/アフター比較

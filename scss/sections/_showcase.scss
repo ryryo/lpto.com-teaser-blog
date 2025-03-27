@@ -1,10 +1,7 @@
 @use '../utils/mixins' as *;
-@use '../animations/keyframes';
 
-/* 開発中の画面セクション */
 .showcase {
   padding: 3rem 0;
-  background: linear-gradient(135deg, var(--primary-50), var(--secondary-50));
 
   .screen-item {
     display: flex;
