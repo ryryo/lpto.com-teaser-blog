@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const initHeroSection = () => {
     const heroVideo = document.getElementById('hero-video');
     if (heroVideo) {
-      heroVideo.playbackRate = 0.5;
+      heroVideo.playbackRate = 0.8;
     }
   };
 

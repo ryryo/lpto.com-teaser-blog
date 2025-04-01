@@ -26,19 +26,6 @@
       z-index: 2;
     }
     
-    &::before {
-      content: '';
-      position: absolute;
-      background-image: url('../img/cap.jpg');
-      background-size: cover;
-      background-position: center;
-      width: 57%;
-      height: 95%;
-      top: 3%;
-      left: 21.5%;
-      border-radius: 40px;
-      z-index: 1;
-    }
   }
   
   &__list {

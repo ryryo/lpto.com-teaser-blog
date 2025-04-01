@@ -33,11 +33,11 @@
     box-shadow: var(--shadow-md);
     
     @include respond-to(md) {
-      height: 400px;
+      height: 600px;
     }
     
     @include respond-to(lg) {
-      height: 500px;
+      height: 800px;
     }
   }
   
@@ -45,7 +45,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
     height: 100%;
     overflow: hidden;
     
@@ -58,12 +58,14 @@
     
     &--before {
       z-index: 1;
+      left: 0;
+      border-right: 2px solid var(--bg-white);
     }
     
     &--after {
       z-index: 2;
-      width: 50%;
-      border-right: 2px solid var(--bg-white);
+      left: 50%;
+      border-left: 2px solid var(--bg-white);
     }
   }
   
